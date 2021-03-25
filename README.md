@@ -1,53 +1,29 @@
-## 2. 리스트 확장 기능
-기존의 리스트는 순서 리스트와 기호 리스트가 있고 이를 들여쓰거나 섞어서 사용했습니다. GFM에서는 체크박스로 리스트를 나타낼 수 있습니다. 기호 리스트나 순서 리스트 이후에 대괄호("[ ]")를 표시하고 그 사이에 대문자 'X'로 구성됩니다. 이를 출력하면 선택된 체크박스를 출력합니다. 만약, 'X'를 입력하지 않으면 빈 체크박스를 출력합니다. 
+# 5. HTML 태그 비활성화
+GFM에서는 다음 HTML 태그를 필터링하여 HTML로 출력되지 않고, 태그 그대로 출력됩니다.
 
-HTML에서는 \<input type="checkbox">와 동일합니다. 출력결과물은 실제로 체크박스를 선택 및 선택해제하는 동적 상호 작용을 처리할 수 있습니다.
+- <title>
+- <textarea>
+- <style>
+- <xmp>
+- <iframe>
+- <noembed>
+- <noframes>
+- <script>
+- <plaintext>
 
-### 예제1  
+### 예제
 ```
-- [ ] foo
-- [x] bar
-```
+<strong> <title> <style> <em>
 
-### 출력1
-- [ ] foo
-- [x] bar
+<blockquote>
+  <xmp> 은 필터링됩니다.  <XMP> 역시 필터링됩니다.
+</blockquote>
 
-### 예제2
-```
-1. [x] foo
-  - [ ] bar
-  - [x] baz
-2. [ ] bim
-```
-
-### 출력2
-1. [x] foo
-  - [ ] bar
-  - [x] baz
-2. [ ] bim
-
-<br><br>
-
-## 3. 취소선
-특정 문장이나 단어를 취소선으로 나타내고 싶다면, 물결 표시('~') 두 개로 묶어 표시하면 됩니다. 주의할 점은, 새로운 단락으로 나뉘어지면 취소선이 적용되지 않습니다.
-
-### 예제1
-```
-~~Hi~~ Hello, world!
 ```
 
-### 출력1
-~~Hi~~ Hello, world!
+### 출력
+<strong> <title> <style> <em>
 
-## 예제2
-```
-This ~~has a
-
-new paragraph~~.
-```
-
-## 출력2
-This ~~has a
-
-new paragraph~~.
+<blockquote>
+  <xmp> 은 필터링됩니다.  <XMP> 역시 필터링됩니다.
+</blockquote>
